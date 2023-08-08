@@ -1,0 +1,24 @@
+												G1 PROCESS (named pipe)
+													
+This process will generate short message which is composed by a time stamp, the process identifier, and a little datum identyfying the message itself: 
+
+											struct message {time_t timestamp; char g; int x);
+
+where, 
+
+timestamp is the actual time (by a suitable syscall)
+g is a character identifying G1 process
+x is the sequence number of the message by G1 process	
+
+In this process, message is generated inside a strict loop  (the fastest possible); at any cycle a delay is applied before sending the message. The delay is computed as follows:
+
+											delay [microseconds] = offset + random(0,offset); 
+The struct message,delay and number of cycles sent to process R from G1 by means of a named pipe(mkfifo,"g1").											
+where,
+
+random(0,offset) is a random generator in the interval 0 – offset with uniform probability
+offset is a parameter that must be changed in the experiment		
+
+This simplified model simulates the generation of quasi-periodic messages by a sensor at variable rate (depending on the value of offset).
+
+This will communicate with R process through named pipes.						

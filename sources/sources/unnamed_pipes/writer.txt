@@ -1,0 +1,25 @@
+												WRITER PROCESS (unnamed pipe)
+
+
+This process will generate short message which is composed by a time stamp, the process identifier, and a little datum identyfying the message itself: 
+
+											struct message {time_t timestamp; char g; int x);
+
+where, 
+
+timestamp is the actual time (by a suitable syscall)
+g is a character identifying G1|G2 process
+x is the sequence number of the message by G1|G2 process	
+
+In this process, message is generated inside a strict loop  (the fastest possible); at any cycle a delay is applied before sending the message. The delay is computed as follows:
+
+											delay [microseconds] = offset + random(0,offset); 
+Unnamed pipes are anonymous pipes and they can have one to one communication.forking G1,G2,R and M processes and write end of G1,G2 process are called in the writer and using exec function reader is called and run seperately,with the help of sprintf read end of pipes declared in G1 and G2 process are sent to reader process using buffer.Also read end of process M is sent to process M and write end is sent to reader process.											
+where,
+
+random(0,offset) is a random generator in the interval 0 – offset with uniform probability
+offset is a parameter that must be changed in the experiment		
+
+This simplified model simulates the generation of quasi-periodic messages by a sensor at variable rate (depending on the value of offset).
+
+This will communicate with reader process through unnamed pipes.	

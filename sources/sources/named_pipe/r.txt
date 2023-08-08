@@ -1,0 +1,7 @@
+											 R PROCESS (named pipe)
+
+R process is a non deterministic receiver of the messages, with the aim of receiving as many messages as possible without blocking the generators G1|G2 (as to say, allowing the G1|G2 to execute at their maximum speed),for this select function is used to randomly rad from G1 and G2. R process puts in a queue all received messages, in the same order they are received, adding each the actual time of reception. After the run is terminated (at least 1 million cycles of either G1 or G2), R transfers them to M; M computes the bandwidth.
+
+With the so determined offset value the student must derive an estimate of the throughput of R, as to say, the maximum bandwidth (in bytes/s) of the communication between the G1|G2 and R.
+
+This process will commuicates with G1|G2 processes and later communicates with M process through named pipes after termination of R process after 1 million cycles.

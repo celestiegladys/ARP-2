@@ -1,0 +1,11 @@
+												READER PROCESS (unnamed pipe)
+
+This process will also reamin same as R process of named pipe but this will use unnamed pipe approach.
+
+Reader process is a non deterministic receiver of the messages, with the aim of receiving as many messages as possible without blocking the generators G1|G2 (as to say, allowing the G1|G2 to execute at their maximum speed). Reader process puts in a queue all received messages, in the same order they are received, adding each the actual time of reception. After the run is terminated (at least 1 million cycles of either G1 or G2), Reader transfers them to M; M computes the bandwidth.
+
+The read end of G1 and G2 process are called here to read the values from writer procerss,also write end of process M is called here to write the values to process M after termination of process R.
+
+With the so determined offset value the student must derive an estimate of the throughput of Reader, as to say, the maximum bandwidth (in bytes/s) of the communication between the G1|G2 and Reader.
+
+This process will commuicates with writer processes and later communicates with M process through unnamed pipes. 
